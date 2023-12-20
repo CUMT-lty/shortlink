@@ -1,0 +1,16 @@
+[common-mysql]
+dsn = "root:@tcp(127.0.0.1:3306)/shortlink?charset=utf8mb4&parseTime=True&loc=Local"
+
+#[common-redis]
+#redisAddress = "127.0.0.1:6379"
+#redisPassword = ""
+#db = 0
+
+#[common-etcd]
+#host = "127.0.0.1:2379"
+#basePath = "/gochat_srv"
+#serverPathLogic = "LogicRpc"
+#serverPathConnect = "ConnectRpc"
+#userName = ""
+#password = ""
+#connectionTimeout = 5
