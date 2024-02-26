@@ -1,7 +1,6 @@
-package user
+package model
 
 import (
-	"github.com/lty/shortlink/admin/common/convertion/result"
 	"github.com/lty/shortlink/db"
 	"gorm.io/gorm"
 )
@@ -26,6 +25,8 @@ func (u *User) AddUser() {
 	}
 }
 
-func (u *User) GetUserByUsername() result.Result {
-	return
+func (u *User) GetUserByUsername(username string) User { // TODO：这里看后期怎么改
+	var user User
+	db.DB.Where("username = ?", username).Take(&user)
+	return user
 }

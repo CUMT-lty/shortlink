@@ -1,5 +1,7 @@
 package config
 
+// 这个后期要从配置文件中读
+
 type Common struct {
 	CommonMysql CommonMysql `mapstructure:"common-mysql"`
 }
