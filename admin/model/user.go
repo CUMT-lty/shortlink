@@ -18,15 +18,16 @@ func (u *User) TableName() string {
 	return "users"
 }
 
-func (u *User) AddUser() {
-	err := db.DB.Create(&u).Error
-	if err != nil {
-		panic(err)
-	}
-}
-
 func (u *User) GetUserByUsername(username string) User { // TODO：这里看后期怎么改
 	var user User
 	db.DB.Where("username = ?", username).Take(&user)
 	return user
+}
+
+func (u *User) InsertUser() error { // TODO：这里需不需要返回 id
+	err := db.DB.Create(&u).Error
+	if err != nil {
+		return err
+	}
+	return nil
 }
